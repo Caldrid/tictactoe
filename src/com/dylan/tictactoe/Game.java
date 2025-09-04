@@ -40,11 +40,11 @@ public class Game {
 
 	// might have to change if want to make game able to play with bigger boards
 	public void startGameInfo() {
-		System.out.println("Welcome to tictactoe! To make a move, enter a number between 0 - 8 to make a move");
+		System.out.println("Welcome to tictactoe! To make a move, enter a number between 1 - 9 to make a move");
 
 		for(int index = 0; index < 3; index++) {
 			for(int index1 = 0; index1 < 3; index1++) {
-				System.out.print(index*3 + index1 + " ");
+				System.out.print(index*3 + index1 + 1 + " ");
 			}
 			System.out.print("\n");
 		}
@@ -58,12 +58,12 @@ public class Game {
 		System.out.println("Player " + currentPlayer.getSymbol() + "'s Turn. Please enter a move: ");
 
 		while(true) {
-			playerMove = scanner.nextInt();
+			playerMove = scanner.nextInt() - 1;
 
 			if(board.checkPlayerMove(playerMove)) {
 				break;
 			} else {
-				System.out.println("That move is invalid. Please enter a valid move (0 - 8): ");
+				System.out.println("That move is invalid. Please enter a valid move (1 - 9): ");
 			}
 		}
 

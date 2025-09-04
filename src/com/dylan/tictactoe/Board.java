@@ -51,7 +51,7 @@ public class Board {
     public boolean isBoardFull() {
         for(int index = 0; index < MAX_BOARD_SIZE; index++) {
             for(int index1 = 0; index1 < MAX_BOARD_SIZE; index1++) {
-                if(board[index][index1] != Game.Mark.EMPTY) {
+                if(board[index][index1] == Game.Mark.EMPTY) {
                     return false;
                 }
             }
