@@ -7,6 +7,7 @@ public class Main {
         Player player1 = new Player(Game.Mark.X);
         Player player2 = new Player(Game.Mark.O);
         Game game = new Game(board, player1, player2);
+
         game.start();
     }
 }
