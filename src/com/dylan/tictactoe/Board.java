@@ -2,10 +2,11 @@ package com.dylan.tictactoe;
 
 public class Board {
     private static final int MAX_BOARD_SIZE = 3;
+    Game.Mark board[][];
 
-    Game.Mark board[][] = new Game.Mark[3][3];
-
-
+    public Board() {
+        this.board = new Game.Mark[MAX_BOARD_SIZE][MAX_BOARD_SIZE];
+    }
 
     public boolean checkWin(Game.Mark currentTurn) {
         // check horizontal
