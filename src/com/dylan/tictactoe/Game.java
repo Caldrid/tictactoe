@@ -50,28 +50,6 @@ public class Game {
 		}
 	}
 
-	public int getPlayerMove() {
-
-		Scanner scanner = new Scanner(System.in);
-		int playerMove;
-
-		System.out.println("Player " + currentPlayer.getSymbol() + "'s Turn. Please enter a move: ");
-
-		while(true) {
-			playerMove = scanner.nextInt() - 1;
-
-			if(board.checkPlayerMove(playerMove)) {
-				break;
-			} else {
-				System.out.println("That move is invalid. Please enter a valid move (1 - 9): ");
-			}
-		}
-
-		System.out.println("RECIEVED MOVE: " + playerMove);
-		return playerMove;
-	}
-
-
 	// have to ask if player vs player or player vs cpu
 	// if player vs cpu, have to ask if you want player 1 or player 2
 	public void start() {
@@ -84,7 +62,14 @@ public class Game {
 		// game loop will exit when one person wins or there is a tie
 		while(true) {
 			board.displayBoard();
-			currentMove = getPlayerMove();
+			System.out.println("Player " + currentPlayer.getSymbol() + "'s Turn. Please enter a move: ");
+			currentMove = currentPlayer.move();
+
+			// check if the move is valid
+			while(!board.checkPlayerMove(currentMove)) {
+				System.out.println("That move is invalid. Please enter a valid move (1 - 9): ");
+				currentMove = currentPlayer.move();
+			}
 
 			board.move(currentPlayer, currentMove);
 			// exit out of loop if someone wins or board is full

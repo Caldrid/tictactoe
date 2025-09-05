@@ -1,9 +1,9 @@
 package com.dylan.tictactoe;
 
 public class Computer extends Player {
-	Game.Mark turn;
+	Game.Mark symbol;
 
-	public Computer(Game.Mark turn) {
-		this.turn = turn;
+	public Computer(Game.Mark symbol) {
+		this.symbol = symbol;
 	}
 }
