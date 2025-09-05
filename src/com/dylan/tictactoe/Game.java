@@ -20,7 +20,6 @@ public class Game {
 	Player player1;
 	Player player2;
 	Player currentPlayer;
-	Mark currentTurn = Mark.X;
 
 	// assume player 1 is first and player 1 is always x
 	public Game(Board board, Player player1, Player player2) {
@@ -31,11 +30,9 @@ public class Game {
 	}
 
 	public void switchTurn() {
-		if(currentTurn == Mark.X) {
-			currentTurn = Mark.O;
+		if(currentPlayer == player1) {
 			currentPlayer = player2;
 		} else {
-			currentTurn = Mark.X;
 			currentPlayer = player1;
 		}
 	}

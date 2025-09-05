@@ -7,6 +7,9 @@ public class Computer extends Player {
 	Game.Difficulty difficulty;
 	Board board;
 
+	private static final int MAX_MOVE_VALUE = 8;
+	private static final int MIN_MOVE_VALUE = 0;
+
 	public Computer(Game.Mark symbol, Game.Difficulty difficulty, Board board) {
 		this.symbol = symbol;
 		this.difficulty = difficulty;
@@ -25,7 +28,7 @@ public class Computer extends Player {
 	public int moveEasy() {
 		int currentMove;
 		do {
-			currentMove = (int)(Math.random() * (8 - 0 + 1)) + 0;
+			currentMove = (int)(Math.random() * (MAX_MOVE_VALUE - MIN_MOVE_VALUE + 1)) + MIN_MOVE_VALUE;
 		} while(!board.checkPlayerMove(currentMove));
 		return currentMove;
 	}
