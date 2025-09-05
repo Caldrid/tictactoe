@@ -14,6 +14,8 @@ public class Game {
 		}
 	}
 
+	public enum Difficulty {EASY, MEDIUM, HARD};
+
 	Board board;
 	Player player1;
 	Player player2;
