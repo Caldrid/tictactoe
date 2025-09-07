@@ -32,5 +32,7 @@ Steps to complete
 2. add minimax algorithm
 3. create frontend, connect backend with frontend using springboot
 4. online play using networking sockets
-5. database with player names to store game outcomes
-6. win?
+5. account system? (*)
+6. database with player names to store game outcomes
+7. win?
+

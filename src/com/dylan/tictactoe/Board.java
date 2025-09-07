@@ -60,12 +60,13 @@ public class Board {
     }
 
     // check if the move is valid and that space is empty
-    // convert integer from 0 - 8 into 2d indicies
+    // convert integer from 0 - 8 into 2d array indicies
     public boolean checkPlayerMove(int playerMove) {
         return((playerMove >= 0 && playerMove <= 8) && (board[playerMove / 3][playerMove % 3] == Game.Mark.EMPTY));
     }
 
     public void move(Player currentPlayer, int playerMove) {
+        // changing value from 0 - 8 into 2d array indicies
         board[playerMove / 3][playerMove % 3] = currentPlayer.getSymbol();
     }
 }

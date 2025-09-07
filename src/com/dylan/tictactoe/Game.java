@@ -1,7 +1,7 @@
 package com.dylan.tictactoe;
 
 import java.util.Scanner;
-
+// TODO create a initializeGame method, there ask for pvp or player vs computer and cpu difficulty --> pass in board
 public class Game {
 	public enum Mark {
 		X,

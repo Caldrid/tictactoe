@@ -22,7 +22,8 @@ public class Computer extends Player {
 			case MEDIUM -> { return moveMedium(); }
 			case HARD -> { return moveHard(); }
 		}
-		return 0;
+		// in case this part ever gets reached
+		return moveEasy();
 	}
 
 	public int moveEasy() {
